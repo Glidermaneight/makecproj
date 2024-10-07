@@ -22,7 +22,7 @@ int main() {
         perror("fopen");
         return 1;
     }
-    fprintf(cmake_file, "cmake_minimum_required(VERSION 3.10)\nproject(%s)\nadd_executable(main main.c)\n", project_name);
+    fprintf(cmake_file, "cmake_minimum_required(VERSION 3.28.2)\nproject(%s)\naux_source_directory(src SOURCES)\nadd_executable(main SOURCES))", project_name);
     fclose(cmake_file);
 
     char src_dir[100];
